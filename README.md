@@ -27,12 +27,15 @@ The code for the Pi is structured as a Gradle project with a task for creating a
 
 To build the runnable JAR for the Pi (for both Windows Powershell and Linux):
 
-1. **Clone** this repo: `$ git clone https://github.com/Hopding/MERP.git`
-2. **CD** into the rpi-code directory: `$ cd MERP/rpi-code`
-3. **Execute** the task to create the JAR: `$ ./gradlew runnableJAR`
+1. **Clone** this repo: 
+`$ git clone https://github.com/Hopding/MERP.git`
+2. **CD** into the rpi-code directory: 
+`$ cd MERP/rpi-code`
+3. **Execute** the task to create the JAR: 
+`$ ./gradlew runnableJAR`
 
 The JAR will be located in the `rpi-code/build/libs` directory. It can be executed with the following command:
-```zsh
+```
 $ java -jar build/libs/merp-server-1.0.jar
 ```
 
