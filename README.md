@@ -25,6 +25,8 @@ This repository contains the code for the Pi ([`rpi-code/`](https://github.com/H
 # Raspberry Pi Code
 The code for the Pi is structured as a Gradle project with a task for creating a runnable JAR file. When this JAR file is run on the Pi, it first begins looking for the Arduino by trying to handshake with the various serial devices that are available (anything listed under `/dev/` as `tty...` - e.g. `/dev/ttyACM0`). If the Arduino is successfully found, it then launches a server listening on port `12345`. Once a client connects, the Pi then listens for commands. Whenever a motor command is received, the Pi relays the message over serial to the Arduino, which in turn sends PWM signals to the servos.
 
+**NOTE:** [Releases](https://github.com/Hopding/MERP/releases) are available with pre-built JARs, if you would prefer to skip the cloning and building steps, and get straight to running the code.
+
 To build and run the JAR for the Pi (for both Windows Powershell and Linux):
 
 * **Clone** this repo: 
