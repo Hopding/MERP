@@ -25,22 +25,21 @@ This repository contains the code for the Pi ([`rpi-code/`](https://github.com/H
 # Raspberry Pi code
 The code for the Pi is structured as a Gradle project with a task for creating a runnable JAR file. When this JAR file is run on the Pi, it first begins looking for the Arduino by trying to handshake with the various serial devices that are available (anything listed under `/dev/` as `tty...` - e.g. `/dev/ttyACM0`). If the Arduino is successfully found, it then launches a server listening on port `12345`. Once a client connects, the Pi then listens for commands. Whenever a motor command is received, the Pi relays the message over serial to the Arduino, which in turn sends PWM signals to the servos.
 
-To build the runnable JAR for the Pi (for both Windows Powershell and Linux):
+To build and run the JAR for the Pi (for both Windows Powershell and Linux):
 
-1. **Clone** this repo: 
+* **Clone** this repo: 
 ```
 $ git clone https://github.com/Hopding/MERP.git
 ```
-2. **CD** into the rpi-code directory: 
+* **CD** into the rpi-code directory: 
 ```
 $ cd MERP/rpi-code
 ```
-3. **Execute** the task to create the JAR: 
+* **Execute** the task to create the JAR: 
 ```
 $ ./gradlew runnableJAR
 ```
-
-The JAR will be located in the `rpi-code/build/libs` directory. It can be executed with the following command:
+* The JAR will be located in the `rpi-code/build/libs` directory. **Execute** it with the following command:
 ```
 $ java -jar build/libs/merp-server-1.0.jar
 ```
